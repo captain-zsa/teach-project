@@ -1,0 +1,154 @@
+.main-nav {
+  background-color: #fff;
+
+  &__burger {
+    @include clear-button;
+
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    img {
+      width: 27px;
+      height: 22px;
+      display: block;
+    }
+  }
+
+  &__close {
+    @include clear-button;
+
+    display: none;
+    position: absolute;
+    top: 17px;
+    right: 20px;
+
+    img {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 79px;
+  }
+
+  &__contacts {
+    display: none;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+
+  &__menu {
+    display: none;
+
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1000;
+    }
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    &--showed {
+      display: flex;
+      flex-direction: column;
+
+      .main-nav__contacts {
+        display: block;
+      }
+
+      .main-nav__close {
+        display: block;
+      }
+    }
+  }
+
+  &__list {
+    @include clear-list;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      padding: 14px;
+
+      @media (max-width: 767px) {
+        background-color: #F0BA4E;
+        border-top: 1px solid rgba(#fff, 0.2);
+        border-bottom: 1px solid rgba(#010101, 0.2);
+      }
+
+      @media (min-width: 768px) {
+        padding: 18px 30px;
+      }
+
+      @media (min-width: 836px) {
+        padding-left: 39px;
+        padding-right: 39px;
+      }
+    }
+
+    &:first-child a {
+      border-top-color: transparent;
+    }
+  }
+
+  &__phone {
+    display: block;
+    color: #3C3C3B;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    margin-left: auto;
+    position: relative;
+    z-index: 1001;
+  }
+
+
+
+  &__pin {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 13px;
+    padding: 0 2px;
+    height: 13px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 7px;
+    background-color: #F0BA4E;
+  }
+}
